@@ -1,0 +1,8 @@
+.text-link {
+    cursor: pointer;
+    color: #2e6830;
+}
+.text-link:hover {
+    color: #102511;
+    transform: scale(1.2);
+}
