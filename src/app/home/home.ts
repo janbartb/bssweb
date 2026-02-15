@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-home',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
     styleUrl: './home.css',
 })
 export class Home {
+    router = inject(Router);
     version: string = '1.0.0';
+
+    startClicked() {
+        this.router.navigate(['start']);
+    }
 }
