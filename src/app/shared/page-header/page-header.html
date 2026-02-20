@@ -1,0 +1,23 @@
+<div class="header-container">
+    <div class="header-title w3-green-d5 w3-display-container">
+        <div class="fullheight flexbox flexmiddle" style="padding-left: 4.125rem;">
+        </div>    
+        <div class="w3-display-middle">
+            <span>{{title}}</span>
+        </div>
+    </div>
+    <div class="header-subtitle w3-green-d3 w3-display-container">
+        <div class="w3-display-middle flexbox">
+            @for (item of subtitleItems; track $index) {
+                <div class="subtitle-item" [ngClass]="{'clickable': $index < subtitleItems.length - 1}"
+                            (click)="subtitleClicked($index)">{{item.tekst}}</div>
+                @if ($index < subtitleItems.length - 1) {
+                    <div style="padding: 0 .375em;">◦</div>
+                }
+            }
+        </div>
+    </div>
+    <div class="header-logo" (click)="gotoHome()">
+        <img src="images/ballen2.jpg" height="112px" alt="" title="Home">
+    </div>
+</div>

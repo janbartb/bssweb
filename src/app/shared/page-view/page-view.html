@@ -1,0 +1,37 @@
+<div class="fullheight flexbox flexstretch">
+    @if (page.subPages.length) {
+        <div class="page-menu">
+            @for (subPage of page.subPages; track $index) {
+                <div class="page-menu-item flexbox" (click)="menuItemClicked($index)">
+                    <div>{{subPage.title}}</div>
+                    @if (subPage.subPages.length) {
+                        <div style="padding-left: .5em;">
+                            <span style="font-size: .75em;">►</span>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    }
+    <div class="flexgrow1">
+        @if (page.topic) {
+            <div class="fullheight" style="overflow-y: scroll; font-size: .75rem;">
+                @if (page.topic == 'algemeen') {
+                    <app-topic-algemeen></app-topic-algemeen>
+                }
+                @else if (page.topic == 'sys-required') {
+                    <app-topic-sys-required></app-topic-sys-required>
+                }
+            </div>
+        }
+        @else {
+            <div class="fullheight flexbox flexcenter flexmiddle">
+                <div style="color: #1e461f; font-size: .75em;">
+                    Klik op een onderwerp links om naar dat onderwerp toe te gaan. <br>
+                    Klik op een onderwerp in de header om naar dat onderwerp terug te gaan. <br><br>
+                    Een ► geeft aan dat het onderwerp uit een of meer sub-onderwerpen bestaat.
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { Base } from '../base/base';
 
 @Component({
     selector: 'app-home',
@@ -7,11 +8,10 @@ import { Router } from '@angular/router';
     templateUrl: './home.html',
     styleUrl: './home.css',
 })
-export class Home {
-    router = inject(Router);
-    version: string = '1.0.0';
-
+export class Home extends Base {
+    
     startClicked() {
         this.router.navigate(['start']);
     }
+    
 }

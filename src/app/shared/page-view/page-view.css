@@ -1,0 +1,12 @@
+.page-menu {
+    padding: .5em 1em;
+    border-right: .25em solid green;
+}
+
+.page-menu-item {
+    color: #459c48;
+    cursor: pointer;
+}
+.page-menu-item:hover {
+    color: #163317;
+}

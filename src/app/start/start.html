@@ -1,1 +1,10 @@
-<p>start works!</p>
+<div class="fullviewheight">
+    <div class="fullheight flexbox flexcolumn">
+        <div>
+            <app-page-header [title]="title" [subtitleItems]="subtitle" (prevPage)="setPrevPage($event)"></app-page-header>
+        </div>
+        <div class="flexgrow1">
+            <app-page-view [page]="page" (nextPage)="setNextPage($event)"></app-page-view>
+        </div>
+    </div>
+</div>
