@@ -2,12 +2,16 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from
 import { Page } from '../../models/page';
 import { TopicAlgemeen } from '../../topics/topic-algemeen/topic-algemeen';
 import { TopicSysRequired } from '../../topics/topic-sys-required/topic-sys-required';
+import { TopicScorebord } from "../../topics/topic-scorebord/topic-scorebord";
+import { TopicScorebordData } from "../../topics/topic-scorebord-data/topic-scorebord-data";
 
 @Component({
     selector: 'app-page-view',
     imports: [
         TopicAlgemeen,
-        TopicSysRequired
+        TopicSysRequired,
+        TopicScorebord,
+        TopicScorebordData
     ],
     templateUrl: './page-view.html',
     styleUrl: './page-view.css',

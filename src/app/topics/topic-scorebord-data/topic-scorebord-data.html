@@ -1,0 +1,38 @@
+<div class="topic flexbox flexcenter">
+    <div>
+        <div class="txt24">
+            <span>
+                Hieronder wordt beschreven welke gegevens er op het scorebord staan. 
+            </span>
+        </div>
+        <div class="txt20 txtn alinea" style="padding-bottom: 2em;">
+            <span>
+                Ga met de muis over een van onderstaande items om de locatie op het scorebord te zien.
+            </span>
+        </div>
+        <div class="flexbox">
+            <div class="topic txt24" style="color: #2e6830; line-height: 1.4;" (mouseout)="hovered(-1)">
+                @for (item of bordItems; track $index) {
+                    <div class="data-item" (mouseover)="hovered($index)">
+                        <span style="padding-right: .5em;">-</span>
+                        <span>{{item.tekst}}</span>
+                    </div>
+                }
+            </div>
+            <div class="topic flexgrow1 txt16">
+                <div class="flexbox" style="padding-left: 4em;">
+                    <div style="border: 4px solid red; position: relative; background-color: #265728; color: #93cf95;">
+                        <app-scorebord-speler [speler]="speler"
+                                            [maxBrt]="60"
+                                            [showPunten]="true"
+                                            [oldPunten]="0"
+                                            [wedOver]="false"
+                                            [isVijfde]="false"
+                                            [hilite]="hilite"
+                                            [position]="'left'"></app-scorebord-speler>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

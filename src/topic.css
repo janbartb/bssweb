@@ -1,0 +1,11 @@
+.topic {
+    padding: .5em 1em;
+    color: #1e461f;
+}
+.topic .alinea { margin-top: .5em; }
+.topic .txtn { font-weight: normal; }
+.topic .txtb { font-weight: bold; }
+.topic .txt28 { font-size: .875em; }
+.topic .txt24 { font-size: .75em; }
+.topic .txt20 { font-size: .625em; }
+.topic .txt16 { font-size: .5em; }

@@ -3,10 +3,10 @@
         <div class="page-menu">
             @for (subPage of page.subPages; track $index) {
                 <div class="page-menu-item flexbox" (click)="menuItemClicked($index)">
-                    <div>{{subPage.title}}</div>
+                    <div style="white-space: nowrap;">{{subPage.title}}</div>
                     @if (subPage.subPages.length) {
-                        <div style="padding-left: .5em;">
-                            <span style="font-size: .75em;">►</span>
+                        <div style="padding-left: .25em;">
+                            <span style="font-size: .75em;">…</span>
                         </div>
                     }
                 </div>
@@ -15,12 +15,18 @@
     }
     <div class="flexgrow1">
         @if (page.topic) {
-            <div class="fullheight" style="overflow-y: scroll; font-size: .75rem;">
+            <div class="fullheight" style="overflow-y: scroll;">
                 @if (page.topic == 'algemeen') {
                     <app-topic-algemeen></app-topic-algemeen>
                 }
                 @else if (page.topic == 'sys-required') {
                     <app-topic-sys-required></app-topic-sys-required>
+                }
+                @else if (page.topic == 'scorebord') {
+                    <app-topic-scorebord></app-topic-scorebord>
+                }
+                @else if (page.topic == 'bord-data') {
+                    <app-topic-scorebord-data></app-topic-scorebord-data>
                 }
             </div>
         }
@@ -29,7 +35,7 @@
                 <div style="color: #1e461f; font-size: .75em;">
                     Klik op een onderwerp links om naar dat onderwerp toe te gaan. <br>
                     Klik op een onderwerp in de header om naar dat onderwerp terug te gaan. <br><br>
-                    Een ► geeft aan dat het onderwerp uit een of meer sub-onderwerpen bestaat.
+                    Een … geeft aan dat het onderwerp een of meer sub-onderwerpen bevat.
                 </div>
             </div>
         }

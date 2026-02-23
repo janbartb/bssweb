@@ -1,0 +1,9 @@
+.radio-btn {
+    cursor: pointer;
+}
+.radio-btn.selected {
+    cursor: default;
+}
+.radio-btn:not(.selected):hover {
+    color: #102511;
+}

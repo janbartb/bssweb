@@ -5,3 +5,10 @@
 
 .fullviewheight { height: 100vh; background-color: #dbefdc; }
 .fullheight { height: 100%; }
+
+.arial { font-family: Arial, Helvetica, sans-serif; }
+.arial-nw { font-family: "Arial Narrow"; }
+
+.clr-red {
+    color: red;
+}

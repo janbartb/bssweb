@@ -1,0 +1,20 @@
+<div class="cmp-button-container">
+    @if (button.showOnlyKey) {
+        <div class="cmp-button-key" [ngClass]="{'selected': button.selected}" (click)="clicked()">
+            <span>{{button.key}}</span>
+        </div>
+    }
+    @else {
+        <div class="cmp-button flexbox flexmiddle" (click)="clicked()" 
+                [ngClass]="{'selected': button.selected, 'disabled': disabled || button.disabled}">
+            @if (button.showKey) {
+                <div class="cmp-button-key">
+                    <span>{{button.key}}</span>
+                </div>
+            }
+            <div class="cmp-button-txt flexgrow1">
+                <span>{{button.text}}</span>
+            </div>    
+        </div>
+    }
+</div>

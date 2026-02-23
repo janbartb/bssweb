@@ -1,0 +1,12 @@
+<div>
+    @for (option of radios.options; track $index) {
+        <div class="radio-btn flexbox" [ngClass]="{'selected': $index == radios.idxSelected}" (click)="radioButtonClicked($index)">
+            <div style="padding-right: .5em;">
+                <i [ngClass]="$index == radios.idxSelected ? 'fas fa-check-circle' : 'far fa-circle'"></i>
+            </div>
+            <div>
+                <span>{{option}}</span>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,6 @@
+.data-item {
+    cursor: default;
+}
+.data-item:hover {
+    color: #102511;
+}
