@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, inject, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, inject, input, Input, OnInit, Output, signal } from '@angular/core';
 import { Speech } from '../../services/speech';
 import { Helper } from '../../services/helper';
 import { WedSpeler, Wedstrijd, WedTeam } from '../../models/wedstrijd';
@@ -433,6 +433,18 @@ export class Scorebord implements OnInit {
             }
             this.checkForEnterMessages();
         }
+        else {
+            if (this.wedstrijd.aantSpelers == 5) {
+                this.idxTeam = 0;
+                this.actieveTeam = this.wedstrijd.teams[this.idxTeam];
+                this.idxSpeler = 0;
+                this.actieveSpeler = this.actieveTeam.spelers[this.idxSpeler];
+            }
+            else {
+                this.idxSpeler = 0;
+                this.actieveSpeler = this.wedstrijd.spelers[this.idxSpeler];
+            }
+        }
     }
 
     private addNumberToSerie(numString: string) {
@@ -738,6 +750,7 @@ export class Scorebord implements OnInit {
         }
         setTimeout(() => {
             this.setGemiddeldes(spl);
+            //this.wedstrijd.spelers[this.idxSpeler] = JSON.parse(JSON.stringify(spl));
             if (team) {
                 this.setTeamGemiddeldes(team);
                 if (this.wedstrijd.telling.idxOptie == 0) {
@@ -986,7 +999,7 @@ export class Scorebord implements OnInit {
         else {
             let wasMetWit = this.actieveSpeler.metWit;
             this.actieveSpeler.actief = false;
-            this.idxSpeler--;
+            this.idxSpeler = this.idxSpeler - 1;
             if (this.idxSpeler < 0) {
                 this.idxSpeler = this.wedstrijd.aantSpelers - 1;
             }

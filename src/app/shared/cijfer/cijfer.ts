@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, effect, Input, input } from '@angular/core';
+import { Component, effect, Input, input, signal } from '@angular/core';
 
 @Component({
     selector: 'app-cijfer',
@@ -14,12 +14,10 @@ export class Cijfer {
     @Input() isSerie: boolean = false;
     @Input() useZero: boolean = true;
     @Input() moveUp: boolean = true;
-    @Input() cijferWidth: number = .53125;
-    //top: number = 0;
-    cijferRol: string[] = [' ', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    @Input() cijferWidth = .53125;
+    cijferRol = [' ', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     oldCijfer: string = ' ';
-    cijfersCss: string[] = ['cijfers', 'plus0', ''];
-    //firstTime: boolean = true;
+    cijfersCss = ['cijfers', 'plus0', ''];
 
     constructor() {
         effect(() => {

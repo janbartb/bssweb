@@ -30,8 +30,11 @@
 } 
 
 .scorebord {
-    width: 60rem;
-    height: 33.75rem;
+    width: 60em;
+    height: 33.75em;
+    position: relative; 
+    background-color: #265728; 
+    color: #93cf95;
 }
 .scorebord.annon {
     background-color: #265728;
@@ -189,7 +192,7 @@
 }
 
 .notification {
-    position: fixed;
+    position: absolute;
     z-index: 20;
     overflow: hidden;
 }

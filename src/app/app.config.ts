@@ -9,7 +9,7 @@ registerLocaleData(localeNl);
 export const appConfig: ApplicationConfig = {
     providers: [
         DecimalPipe,
-        //provideZoneChangeDetection({ eventCoalescing: true }),
+        provideZoneChangeDetection({ eventCoalescing: true }),
         provideBrowserGlobalErrorListeners(),
         provideRouter(routes),
         { provide: LOCALE_ID, useValue: "nl-NL" },

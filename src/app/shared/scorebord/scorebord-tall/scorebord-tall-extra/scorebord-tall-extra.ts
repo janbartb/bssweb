@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { GetalVar } from '../../../getal-var/getal-var';
 import { NgClass } from '@angular/common';
 

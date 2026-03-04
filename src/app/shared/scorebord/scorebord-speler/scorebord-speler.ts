@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, inject, input, Input, OnInit, signal } from '@angular/core';
 import { WedSpeler } from '../../../models/wedstrijd';
 import { ScorebordTallInfo } from '../scorebord-tall/scorebord-tall-info/scorebord-tall-info';
 import { ScorebordTallStand } from '../scorebord-tall/scorebord-tall-stand/scorebord-tall-stand';

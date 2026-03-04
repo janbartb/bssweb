@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { WedSpeler, Wedstrijd } from '../../../models/wedstrijd';
 import { ScorebordSpeler } from '../scorebord-speler/scorebord-speler';
 

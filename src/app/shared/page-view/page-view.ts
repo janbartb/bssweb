@@ -4,6 +4,7 @@ import { TopicAlgemeen } from '../../topics/topic-algemeen/topic-algemeen';
 import { TopicSysRequired } from '../../topics/topic-sys-required/topic-sys-required';
 import { TopicScorebord } from "../../topics/topic-scorebord/topic-scorebord";
 import { TopicScorebordData } from "../../topics/topic-scorebord-data/topic-scorebord-data";
+import { TopicWorkingDemo } from '../../topics/topic-working-demo/topic-working-demo';
 
 @Component({
     selector: 'app-page-view',
@@ -11,7 +12,8 @@ import { TopicScorebordData } from "../../topics/topic-scorebord-data/topic-scor
         TopicAlgemeen,
         TopicSysRequired,
         TopicScorebord,
-        TopicScorebordData
+        TopicScorebordData,
+        TopicWorkingDemo
     ],
     templateUrl: './page-view.html',
     styleUrl: './page-view.css',

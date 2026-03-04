@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { GetalVar } from '../../../getal-var/getal-var';
 import { NgClass } from '@angular/common';
 
@@ -12,9 +12,9 @@ import { NgClass } from '@angular/common';
     styleUrl: './scorebord-tall-stand.css',
 })
 export class ScorebordTallStand {
-    @Input() aantCar: number = 0;
     @Input() aantBrt: number = 0;
     @Input() moy: number = 0;
+    @Input() aantCar: number = 0;
     @Input() serie: number = 0;
     @Input() enNog: number = 0;
     @Input() moyView: string = '0,000';

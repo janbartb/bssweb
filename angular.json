@@ -35,6 +35,7 @@
                             "src/fontawesome/css/all.css"
                         ],
                         "polyfills": [
+                            "zone.js",
                           "@angular/localize/init"
                         ]
                     },

@@ -1,16 +1,27 @@
 import { Injectable } from '@angular/core';
-import { WedRegels, WedSpeler, Wedstrijd, WedTeam } from '../models/wedstrijd';
+import { WedSpeler, Wedstrijd, WedTeam } from '../models/wedstrijd';
 import { Page } from '../models/page';
 
 @Injectable({
     providedIn: 'root',
 })
 export class Data {
-    private wedstrijd: Wedstrijd = new Wedstrijd();
     private page: Page = new Page('Start');
 
     getWedstrijd(aantSpelers: number): Wedstrijd {
         return this.getInitialWedStrijd(aantSpelers);
+    }
+
+    getDemoWedstrijd(): Wedstrijd {
+        let wed = this.getWedstrijd(2);
+        wed.regels.idxOptie = 2;
+        wed.regels.vastAantCar = 10;
+        wed.regels.maxBeurten = 10;
+        wed.telling.bovenMoyPunten = 1;
+        wed.spelers[0].splTsCar = 10;
+        wed.spelers[0].stand.aantBrt = 0;
+        wed.spelers[1].splTsCar = 10;
+        return wed;
     }
 
     getInitialPage(): Page {
@@ -29,7 +40,7 @@ export class Data {
         // scorebord
         page = this.page.addSubPage('Scorebord', 'scorebord');
         page.addSubPage('Items op scorebord', 'bord-data');
-        page.addSubPage('Werkend voorbeeld');
+        page.addSubPage('Werkend voorbeeld', 'werkend-voorbeeld');
         page.addSubPage('Andere spelvormen');
         // gegevens
         page = this.page.addSubPage('Gegevens');

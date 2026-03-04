@@ -1,4 +1,4 @@
-import { Component, effect, Input, input, OnInit } from '@angular/core';
+import { Component, effect, Input, input, OnInit, signal } from '@angular/core';
 import { Cijfer } from '../cijfer/cijfer';
 import { NgClass } from '@angular/common';
 
@@ -30,7 +30,7 @@ export class GetalVar implements OnInit {
     getalWidth: number = .53125;
 
     constructor() {
-        // this.cijfers = this.getCijfers();
+        this.cijfers = ['0'];
         effect(() => {
             const g = this.getal().replaceAll('.', '');
             const gNum = g.replaceAll(',', '.');
@@ -49,6 +49,7 @@ export class GetalVar implements OnInit {
             }
             if (g.length == this.getalOld.length) {
                 this.cijfers = this.getCijfers(g, this.getalOld);
+                //this.cijfers = this.getCijfers(g, this.getalOld);
                 this.getalOld = g;
                 this.getalOldNum = this.getalNum;
             }
@@ -56,13 +57,16 @@ export class GetalVar implements OnInit {
                 if (g.length > this.getalOld.length) {
                     this.getalWidth = this.getGetalWidth(g);
                     setTimeout(() => {
+                        // lala
                         this.cijfers = this.getCijfers(g, this.getalOld);
+                        //this.cijfers = this.getCijfers(g, this.getalOld);
                         this.getalOld = g;
                         this.getalOldNum = this.getalNum;
                     }, 1000);
                 }
                 else {
                     this.cijfers = this.getCijfers(g, this.getalOld);
+                    //this.cijfers = this.getCijfers(g, this.getalOld);
                     setTimeout(() => {
                         this.getalWidth = this.getGetalWidth(g);
                         this.getalOld = g;

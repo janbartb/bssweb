@@ -6,7 +6,7 @@
                 @if (actief) {
                     <div class="fullheight flexbox flexmiddle flexright" style="padding-right: 1em;">
                         <div class="flexgrow1 fullheight" style="position: relative; overflow: hidden; margin-left: .5em;">
-                            <div class="flexbox" style="position: absolute; right: 0; top: 0;">
+                            <div class="fullheight flexbox flexmiddle" style="position: absolute; right: 0; top: 0;">
                                 @for (cars of laatste5; track $index) {
                                     @if (laatste5.length < 5 || $index > 0) {
                                         <div style="padding-right: 1em;" 

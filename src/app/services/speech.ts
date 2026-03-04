@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class Speech {
     voices: SpeechSynthesisVoice[] = [];
     voice?: SpeechSynthesisVoice;
-    speechOn: boolean = false;
+    speechOn: boolean = true;
 
     constructor() { }
 
